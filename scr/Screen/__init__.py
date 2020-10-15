@@ -18,3 +18,6 @@ class Map:
         # Animação do céu
         pass
 
+    def Ground(self):
+        # Geração do Terreno
+
