@@ -6,10 +6,10 @@ class Map:
         self.window = janela
 
 
-    def LoadBack(self):
+    def LoadBack(self,img):
         # Carrega Senario de Fundo
         bg = pygame.sprite.Sprite(self.telaGrup)
-        bg.image = pygame.image.load("data/bgone.png")
+        bg.image = pygame.image.load(img)
         bg.image = pygame.transform.scale(bg.image, [840, 480])
         bg.rect = bg.image.get_rect()
         self.telaGrup.draw(self.window)
@@ -18,6 +18,13 @@ class Map:
         # Animação do céu
         pass
 
-    def Ground(self):
+    def Ground(self,img,grup,x,y):
         # Geração do Terreno
+        ground = pygame.sprite.Sprite(grup)
+        ground.image = pygame.image.load(img)
+        ground.image = pygame.transform.scale(ground.image, [60, 60])
+        ground.rect = pygame.Rect(x,y, 60, 60)
+
+        grup.draw(self.window)
+
 
